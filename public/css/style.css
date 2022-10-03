@@ -1,0 +1,1212 @@
+:root {
+  --colorBG: rgb(20, 21, 29);
+  /*rgb(25 116 124);
+  /* rgb(55, 46, 46); */
+  /* rgb(70, 58, 58); */
+  --fuenteNormal: 3rem;
+  --fuente1024: 1.8rem;
+  --fuenteMobile: 1.6rem;
+  --fuenteTablet: 1.4rem;
+  --blanco: rgb(255, 255, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  font-size: var(--fuenteMobile);
+  background-color: var(--colorBG);
+  box-shadow: 2px 2px 2px rgb(194, 141, 141);
+}
+
+.header__logo {
+  margin-bottom: 2rem;
+}
+
+.header__logo,
+.header__nav-bar > a,
+.login > a {
+  color: var(--blanco);
+  text-decoration: none;
+}
+
+.header__nav-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-transform: uppercase;
+}
+
+.header__nav-bar > a {
+  font-size: var(--fuenteMobile);
+  margin: 0.5rem 0;
+}
+
+.linea {
+  width: 100%;
+  height: 3px;
+  background-color: var(--blanco);
+  margin: 5px 0;
+}
+
+.mostrar {
+  display: none;
+}
+
+.login {
+  order: -1;
+  margin-bottom: 2rem;
+  font-size: var(--fuenteMobile);
+}
+
+.login > a:last-child::before {
+  color: var(--blanco);
+  content: " | ";
+}
+
+.login > a:first-child::before {
+  content: none;
+}
+
+.header__nav-form {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 1.3rem;
+
+  font-size: var(--fuenteMobile);
+}
+
+.header__nav-form--btn {
+  margin-top: 0.5rem;
+  width: 7rem;
+}
+
+.menu {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.footer {
+  height: 25rem;
+}
+
+.footer > a {
+  display: none;
+}
+
+.footer__nav-bar {
+  font-size: var(--fuenteMobile);
+}
+
+.Error {
+  margin: 1rem auto;
+  width: auto;
+}
+
+.Error__Mensaje {
+  text-align: center;
+  margin: 0.5rem auto;
+  background-color: Red;
+  font-size: var(--fuenteMobile);
+}
+
+/** CSS AL HEADER && FOOTER**/
+
+.hero {
+  position: relative;
+  margin: 1rem 0;
+  height: 45rem;
+  background-image: url("/media/banner2.0.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.hero__content {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0, 75%);
+
+  color: var(--blanco);
+  font-size: 2.5rem;
+}
+
+/** CSS AL HERO **/
+
+.format {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 2.5rem;
+}
+
+.card-container {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.card-container__card {
+  margin: 0 auto;
+  width: 70%;
+  height: 250px;
+  /* border: 1px solid rgb(67, 62, 62); */
+  border-radius: 2rem;
+}
+
+.card-container__card {
+  width: 254px;
+  height: 304px;
+}
+.card-container__card > img {
+  width: 250px;
+  height: 300px;
+  border-radius: 5rem;
+}
+
+.card-container__card:last-child {
+  margin-bottom: 2.5rem;
+}
+
+.card-container > h1 {
+  text-align: center;
+  font-size: var(--fuenteMobile);
+}
+
+/** CSS AL CARD CONTAINER **/
+
+.formularioRegistro--fieldset {
+  margin: 10rem auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.formularioRegistro--fieldset > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formularioRegistro--fieldset > div > h1,
+.formularioRegistro--fieldset > div > label,
+.formularioRegistro--fieldset > div > input,
+.formularioRegistro--fieldset > div > label > a,
+.generoSelect,
+.generoSelect > option {
+  font-size: var(--fuenteMobile);
+  margin-bottom: 0rem;
+}
+
+.formularioRegistro--fieldset > div > label:first-of-type {
+  margin-top: 2rem;
+}
+
+.formularioRegistro--fieldset > div > label {
+  text-align: center;
+}
+
+.formularioRegistro--fieldset > div > input,
+.generoSelect,
+.generoSelect > option {
+  width: 80%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.formularioRegistro--fieldset > img {
+  display: none;
+}
+
+.formularioRegistro--fieldset > div > input:last-child {
+  margin-top: 1.6rem;
+  width: 10rem;
+}
+
+/** CSS AL FORMULARIO DE REGISTRO **/
+
+.formularioLogin--fieldset {
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 80%;
+  height: auto;
+}
+
+.formularioLogin--fieldset > h1,
+.formularioLogin--fieldset > label,
+.formularioLogin--fieldset > input {
+  font-size: var(--fuenteMobile);
+  font-size: var(--fuenteMobile);
+  margin-bottom: 0rem;
+  text-align: center;
+  margin: auto auto;
+}
+
+.formularioLogin--fieldset > h1 {
+  margin-top: 1rem;
+}
+
+.formularioLogin--fieldset > label {
+  margin-top: 1rem;
+}
+
+.formularioLogin--fieldset > input:last-child {
+  margin-top: 3.5rem;
+}
+
+/** CSS AL FORMULARIO DEL LOGIN **/
+
+.formularioProducto,
+.formularioProducto--fieldset {
+  border: none;
+}
+
+.formularioProducto {
+  width: 100%;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formularioProducto--fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formularioProducto--fieldset > h1,
+.formularioProducto--fieldset > label,
+.formularioProducto--fieldset > input,
+.talla > * {
+  text-align: center;
+  color: black;
+  font-size: var(--fuenteMobile);
+}
+
+.formularioProducto--fieldset > h1,
+.formularioProducto--fieldset > div > h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.formularioProducto--fieldset > label {
+  font-weight: 700;
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.formularioProducto--fieldset--carac {
+  margin: 1rem auto;
+  background-color: none;
+  border: none;
+  font-size: 2rem;
+  width: 100%;
+}
+
+.formularioProducto--fieldset > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.talla {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.talla > label {
+  margin: 0 1rem;
+  margin-top: 2rem;
+}
+
+.talla > label,
+.talla > select {
+  font-size: 2.5rem;
+}
+
+.talla > input:last-of-type {
+  margin-bottom: 3rem;
+}
+
+.formularioProducto--fieldset > img {
+  width: 50%;
+  height: 50%;
+  margin: 1rem auto;
+}
+
+.formularioProducto--fieldset--camion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 1rem auto;
+}
+
+.formularioProducto--fieldset--camion > p {
+  font-size: var(--fuenteMobile);
+  font-weight: bold;
+}
+
+.formularioProducto--fieldset > input:last-of-type {
+  background-color: rgb(20, 21, 29);
+  color: white;
+  height: 5rem;
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.formularioProducto--fieldset > input:last-of-type:hover {
+  cursor: pointer;
+}
+
+/** CSS AL FORMULARIO DE PRODUCTO **/
+
+.contenedorCarrito {
+  min-height: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.car_alerta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(20, 21, 29);
+  color: white;
+  border-radius: 1rem;
+  width: 90%;
+  height: 5rem;
+  margin-top: 10rem;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.car_title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.car_table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.data {
+  font-size: 2rem;
+  width: 10rem;
+  text-align: center;
+}
+
+.data--img {
+  width: 50%;
+}
+
+.data--img > img {
+  height: 100%;
+  width: 60%;
+  margin-left: 3rem;
+  margin-right: 2.5rem;
+}
+
+.infoCompra {
+  margin-bottom: 2rem;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoCompra--div,
+.infoCompra--form {
+  display: flex;
+  flex-direction: column;
+}
+.infoCompra--div > label,
+.infoCompra--div > input,
+.infoCompra--form > label,
+.infoCompra--form > input {
+  font-size: 2.5rem;
+  text-align: center;
+}
+.infoCompra--div > input,
+.infoCompra--form > input {
+  margin: 1rem 0;
+}
+
+.infoCompra--form > input:last-child {
+  margin-top: 0;
+  background-color: rgb(20, 21, 29);
+  color: white;
+  text-transform: uppercase;
+}
+
+.infoCompra--form > input:last-child:hover {
+  cursor: pointer;
+}
+
+.alerta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 3rem;
+  background-color: rgb(20, 21, 29);
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+.codigo {
+  width: 50%;
+}
+
+.invalido {
+  width: 90%;
+}
+
+.alertaLoggin {
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
+/** CSS AL CARRITO **/
+
+@media (min-width: 768px) {
+  .header {
+    height: 15rem;
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+
+  .header__logo {
+    margin-left: 5rem;
+    margin-bottom: 0;
+    width: 10rem;
+  }
+
+  .header__nav-bar {
+    flex-direction: row;
+  }
+
+  .enlaces{
+    display: block;
+  }
+
+  .header__nav-bar > a {
+    margin-right: 1rem;
+  }
+
+  .header__nav-bar > a,
+  .header__nav-form > input,
+  .login > a,
+  .footer__nav-bar,
+  .card-container > h1 {
+    font-size: var(--fuenteTablet);
+  }
+
+  .footer > a {
+    display: block;
+  }
+
+  .login {
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    order: 0;
+  }
+
+  .login > a:last-child::before {
+    content: none;
+  }
+
+  .header__nav-form {
+    order: 0;
+    flex-direction: row;
+    margin: auto auto;
+  }
+
+  .header__nav-form--search {
+    width: 14rem;
+  }
+
+  .header__nav-form--btn {
+    margin-top: 0;
+    margin-right: 0.5rem;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .Error {
+    margin: 1rem auto;
+    width: 40rem;
+  }
+
+  .Error__Mensaje {
+    text-align: center;
+    font-size: var(--fuenteTablet);
+    margin: 0.5rem auto;
+    background-color: Red;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /** CSS AL HEADER && FOOTER**/
+
+  .hero {
+    margin: 2rem 0;
+    height: 50rem;
+  }
+
+  .hero__content {
+    font-size: 5rem;
+  }
+
+  /** CSS AL HERO **/
+
+  .format {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-container {
+    width: 80%;
+    margin: 5rem auto;
+    border-radius: 20px;
+    /* box-shadow: 1px 1px 2px 2px rgb(68, 55, 55); */
+  }
+
+  .card-container__card {
+    width: 254px;
+    height: 304px;
+  }
+  .card-container__card > img {
+    width: 250px;
+    height: 300px;
+    border-radius: 1rem;
+  }
+
+  /** CSS AL CARD CONTAINER DEL MAIN**/
+
+  .formularioRegistro--fieldset {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .formularioRegistro--fieldset {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 90%;
+  }
+
+  .formularioRegistro--fieldset > div > h1 {
+    font-size: 4rem;
+    margin-bottom: 0rem;
+  }
+
+  .formularioRegistro--fieldset > div > label {
+    margin: 10px auto;
+    text-align: center;
+    font-size: var(--fuenteTablet);
+    margin-bottom: 0rem;
+  }
+
+  .formularioRegistro--fieldset > div > input,
+  .generoSelect,
+  .generoSelect > option {
+    width: 25rem;
+    text-align: center;
+    font-size: var(--fuenteTablet);
+    margin-bottom: 1rem;
+  }
+
+  /** CSS AL FORMULARIO DE REGISTRO **/
+
+  .formularioLogin {
+    min-height: 70rem;
+  }
+
+  .formularioLogin--fieldset {
+    margin: 5rem auto;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 80%;
+    height: auto;
+  }
+
+  .formularioLogin--fieldset > h1,
+  .formularioLogin--fieldset > label,
+  .formularioLogin--fieldset > input {
+    font-size: var(--fuenteMobile);
+    font-size: var(--fuenteMobile);
+    margin-bottom: 0rem;
+    text-align: center;
+    margin: auto auto;
+  }
+
+  .formularioLogin--fieldset > h1 {
+    margin-top: 1rem;
+  }
+
+  .formularioLogin--fieldset > label {
+    margin-top: 1rem;
+  }
+
+  /** CSS AL FORMULARIO LOGIN **/
+
+  .formularioProducto--fieldset--camion {
+    width: 25%;
+  }
+
+  .contenedorCarrito {
+    min-height: 75rem;
+  }
+
+  .infoCompra {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  /** CSS AL CARRITO **/
+
+  .formularioProducto,
+  .formularioProducto--fieldset {
+    width: 90%;
+  }
+
+  .formularioProducto--fieldset > h1,
+  .formularioProducto--fieldset > label,
+  .formularioProducto--fieldset > input,
+  .talla > * {
+    font-size: var(--fuenteTablet);
+  }
+
+  .formularioProducto--fieldset > h1,
+  .formularioProducto--fieldset > div > h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+
+  .formularioProducto--fieldset > label {
+    font-weight: 700;
+    margin-top: 2rem;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+  }
+
+  .formularioProducto--fieldset > div {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .formularioProducto--fieldset > div:last-child {
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
+
+  .talla {
+    flex-direction: row;
+    gap: 5rem;
+  }
+
+  .talla > label,
+  .talla > input:last-of-type {
+    margin: 0;
+  }
+
+  .talla > label,
+  .talla > select,
+  .talla > input:last-of-type {
+    font-size: 2rem;
+  }
+  /** CSS AL FORMULARIO DE PRODUCTO **/
+}
+
+@media (min-width: 950px) {
+  .formularioRegistro--fieldset {
+    justify-content: space-between;
+  }
+
+  .formularioRegistro--fieldset > img {
+    display: block;
+    width: 50%;
+  }
+}
+
+/* FUENTES */
+@media (min-width: 1024px) {
+  .card-container__card {
+    width: 254px;
+    height: 304px;
+  }
+  .card-container__card > img {
+    width: 250px;
+    height: 300px;
+    border-radius: 1rem;
+  }
+
+  .header__nav-bar > a,
+  .header__nav-form > input,
+  .login > a,
+  .footer__nav-bar,
+  .card-container > h1,
+  .formularioRegistro--fieldset > div > label,
+  .formularioRegistro--fieldset > div > input,
+  .generoSelect,
+  .generoSelect > option,
+  .Error__Mensaje,
+  .formularioRegistro--fieldset > input {
+    font-size: var(--fuente1024);
+  }
+
+  .header__nav-form--search {
+    width: 20rem;
+  }
+
+  .Error {
+    margin: 1rem auto;
+    width: 40rem;
+  }
+
+  .Error__Mensaje {
+    text-align: center;
+    margin: 0.5rem auto;
+    background-color: Red;
+  }
+
+  .formularioRegistro--fieldset {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .formularioRegistro--fieldset > div {
+    margin: 0 auto;
+  }
+
+  .formularioRegistro--fieldset > div > label {
+    margin-bottom: 0rem;
+  }
+
+  .formularioRegistro--fieldset > div > input,
+  .generoSelect,
+  .generoSelect > option {
+    margin-bottom: 1rem;
+  }
+
+  .formularioRegistro--fieldset > div > input:last-child {
+    margin-top: 1.6rem;
+    width: 15rem;
+  }
+
+  .formularioRegistro--fieldset > img {
+    display: block;
+    width: 70rem;
+  }
+
+  /** CSS AL FORMULARIO DE REGISTRO **/
+
+  .formularioProducto--fieldset > img {
+    width: 60%;
+    height: 100%;
+  }
+
+  .formularioProducto--fieldset--camion {
+    width: 20%;
+  }
+
+  .infoCompra {
+    flex-direction: row;
+    gap: 5rem;
+  }
+
+  .talla {
+    flex-direction: row;
+    gap: 10rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .formularioRegistro--fieldset {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .formularioRegistro--fieldset > div > label {
+    font-size: var(--fuenteNormal);
+  }
+
+  .formularioRegistro--fieldset > div > input,
+  .generoSelect,
+  .generoSelect > option {
+    font-size: var(--fuenteNormal);
+    width: 30rem;
+  }
+
+  /** CSS AL FORMULARIO DE REGISTRO **/
+
+  .formularioLogin--fieldset > h1,
+  .formularioLogin--fieldset > label,
+  .formularioLogin--fieldset > input,
+  .Error__Mensaje {
+    font-size: var(--fuenteNormal);
+  }
+
+  .format {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /** CSS AL FORMULARIO DE LOGIN **/
+  .formularioProducto--fieldset > img {
+    width: 30%;
+  }
+
+  .formularioProducto--fieldset > input:last-of-type {
+    width: 20%;
+  }
+
+  .infoCompra {
+    flex-direction: row;
+    gap: 10rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .header {
+    height: 15rem;
+    grid-template-columns: 20% 80%;
+  }
+
+  .header,
+  .header__logo,
+  .header__nav-bar > a,
+  .footer__nav-bar,
+  .card-container > h1 {
+    font-size: var(--fuenteNormal);
+  }
+
+  .card-container > h1 {
+    margin-top: 5rem;
+  }
+
+  .header__nav-bar {
+    justify-content: right;
+  }
+
+  .header__nav-form {
+    margin: auto auto;
+  }
+
+  .header__nav-form--search {
+    width: 30rem;
+    margin-left: 25rem;
+  }
+
+  .login > a {
+    font-size: var(--fuenteNormal);
+  }
+
+  .header__nav-form > input {
+    font-size: var(--fuenteNormal);
+  }
+
+  .header__nav-form--btn {
+    margin-left: 1rem;
+  }
+
+  .header__nav-form--btn {
+    width: 100px;
+  }
+
+  .footer__nav-bar {
+    justify-content: right;
+  }
+
+  .Error {
+    margin: 1rem auto;
+    width: 50rem;
+  }
+
+  .Error__Mensaje {
+    text-align: center;
+    font-size: var(--fuenteNormal);
+    margin: 1rem auto;
+    background-color: Red;
+  }
+  /** CSS AL HEADER && FOOTER**/
+
+  .hero {
+    height: 70rem;
+  }
+
+  .hero__content {
+    text-transform: uppercase;
+    font-size: 10rem;
+  }
+
+  /** CSS AL HERO **/
+
+  .card-container__card {
+    width: 254px;
+    height: 304px;
+  }
+  .card-container__card > img {
+    width: 250px;
+    height: 300px;
+    border-radius: 0.5rem;
+  }
+
+  /** CSS AL CARD CONTAINER DEL MAIN **/
+
+  .formularioRegistro--fieldset {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .formularioRegistro--fieldset > div {
+    margin: 0 auto;
+  }
+
+  .formularioRegistro--fieldset > div > label {
+    font-size: var(--fuenteNormal);
+  }
+
+  .formularioRegistro--fieldset > div > input,
+  .generoSelect,
+  .generoSelect > option {
+    font-size: var(--fuenteNormal);
+  }
+
+  .formularioRegistro--fieldset > img {
+    display: block;
+    width: auto;
+  }
+
+  .formularioRegistro--fieldset > div > textarea {
+    font-size: var(--fuenteNormal);
+  }
+
+  /** CSS AL FORMULARIO DE REGISTRO **/
+
+  .formularioLogin--fieldset > input {
+    width: 50rem;
+  }
+
+  .formularioLogin--fieldset > input:last-child {
+    width: 20rem;
+    margin-bottom: 2rem;
+  }
+
+  /** CSS AL FORMULARIO DE LOGION **/
+
+  .admin_table {
+    margin: 3rem auto;
+
+    width: 80%;
+    height: 25rem;
+
+    text-align: center;
+  }
+
+  .admin_title {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .data {
+    border-bottom: 1px solid rgb(34, 30, 30);
+    font-size: 2.5rem;
+    height: 5rem;
+    max-width: 50rem;
+    overflow-wrap: break-word;
+  }
+
+  .data--img {
+    height: 10rem;
+    width: 10rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10rem 0;
+  }
+
+  .actions__actualizar,
+  .actions__eliminar {
+    width: 20rem;
+    height: 4rem;
+    font-size: var(--fuenteNormal);
+    text-align: center;
+    text-decoration: none;
+    color: black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .actions__crear,
+  .actions__actualizar {
+    background-color: rgb(79, 198, 79);
+  }
+
+  .actions__eliminar {
+    margin: 1rem 0;
+    background-color: red;
+  }
+
+  .actions__crear {
+    height: 5rem;
+    width: 20%;
+    margin: 2rem 20rem;
+
+    font-size: var(--fuenteNormal);
+    text-align: center;
+    text-decoration: none;
+    color: black;
+  }
+
+  /** CSS AL PANEL DE ADMIN **/
+
+  .contenedorCarrito {
+    min-height: 70vh;
+  }
+
+  .car_alerta {
+    margin-top: 10rem;
+    font-size: 2.5rem; /*REVISAR*/
+  }
+
+  .car_title {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .data {
+    font-size: 3rem;
+    width: 30%;
+    border: none;
+    padding: 10rem;
+  }
+
+  .data--title {
+    padding: 0rem;
+    text-transform: uppercase;
+  }
+
+  .data--img {
+    width: 20%;
+    height: 100%;
+  }
+
+  .data--img > img {
+    height: 100%;
+    width: 60%;
+    margin: 0 auto;
+    margin-left: 20rem;
+  }
+
+  .car_alerta {
+    font-size: var(--fuenteNormal);
+    width: 30%;
+    margin: 25rem auto;
+  }
+
+  .alertaLoggin {
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+  }
+
+  .infoCompra {
+    margin-top: 10rem;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .infoCompra--div > label,
+  .infoCompra--div > input,
+  .infoCompra--form > label,
+  .infoCompra--form > input {
+    font-size: var(--fuenteNormal);
+  }
+
+  .alerta {
+    height: 5rem;
+    margin-bottom: 0;
+    font-size: var(--fuenteNormal);
+  }
+
+  .codigo {
+    width: 25rem;
+    margin-left: 14rem;
+    margin-bottom: 5rem;
+  }
+
+  .invalido {
+    width: 40rem;
+    margin-left: 14rem;
+    margin-bottom: 5rem;
+  }
+
+  /** CSS AL CARRITO **/
+}
