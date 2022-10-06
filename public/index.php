@@ -14,6 +14,7 @@ $router->get('/', [PaginasController::class, 'index']);
 //Iniciar y Cerrar Sesión
 $router->get('/login', [LoginController::class, 'login']);
 $router->post('/login', [LoginController::class, 'login']);
+$router->get('/salir', [LoginController::class, 'salir']);
 
 //Registrarse 
 $router->get('/registrarse', [LoginController::class, 'registrarse']);

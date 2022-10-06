@@ -24,7 +24,6 @@
 
         <a href="/" class="header__logo">LOGOTIPO</a>
 
-
         <nav class="header__nav-bar">
             <form action="" class="header__nav-form" style="display: block; visibility: hidden;">
                 <input type="text" class="header__nav-form--search" autocomplete="on">
@@ -39,7 +38,7 @@
 
             <div class="header__nav-bar mostrar enlaces" id="enlaces">
                 <?php
-                echo isset($inicio) ? '' : '<a href="/">Inicio</a>';
+                echo isset($inicio) ? '' : '<a href="/a">Inicio</a>';
                 ?>
                 <a href="">Hombres</a>
                 <a href="">Mujeres</a>
@@ -62,8 +61,8 @@
                         <?php break;
                         case 3: ?>
                             <!--Cuando ya inició Sesión -->
-                            <a>Hola <?php echo " " . $name; ?>!</a>
-                            <a href="/paginas/salir.php">Salir</a>
+                            <a>Hola <?php echo " " . $nombre; ?>!</a>
+                            <a href="/salir">Salir</a>
                         <?php break;
                         case 4: ?>
                             <a>Bienvenido Juanito</a>

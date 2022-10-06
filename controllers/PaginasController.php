@@ -9,11 +9,18 @@ class PaginasController
 {
     public static function index(Router $router)
     {
+        isAuth();
+        
         $prendas = new Prenda();
         $prendas = $prendas->all();
-        $router->render('paginas/index', 
-        ['inicio' => true, 
-        'valor' => 0, 
-        'prendas' => $prendas]);
+        $router->render(
+            'paginas/index',
+            [
+                'inicio' => true,
+                'nombre' => $_SESSION['nombre'] ?? '',
+                'valor' => $_SESSION['nombre'] ? 3 : 0,
+                'prendas' => $prendas
+            ]
+        );
     }
 }

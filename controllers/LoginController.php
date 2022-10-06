@@ -34,10 +34,10 @@ class LoginController
                         //Redireccionamiento
                         if ($usuario->Tipo === "Administrador") {
                             $_SESSION['admin'] = $usuario->Tipo ?? null;
-
+                            debuguear("1");
                             //header('Location: /admin');
                         } else {
-                            //header('Location: /cita');
+                            header('Location: /');
                         }
                     } else {
                         Usuario::setAlerta('Error', 'Contraseña Incorrecta');
@@ -48,7 +48,7 @@ class LoginController
             }
         }
 
-        $alertas = Usuario::getErrores();
+        $alertas = Usuario::getAlertas();
         $router->render('/auth/login', [
             'alertas' => $alertas,
             'auth' => $auth,
@@ -61,11 +61,50 @@ class LoginController
     {
         $alertas = [];
         $usuario = new Usuario();
+
+        if ($_SERVER['REQUEST_METHOD'] === "POST") {
+            $usuario->sincronizar($_POST);
+            $alertas = $usuario->validarRegistro();
+
+            if (empty($alertas)) {
+                $resultado = $usuario->existeUsuario();
+
+                //Está registrado
+                if ($resultado->num_rows) {
+                    $alertas = Usuario::getAlertas();
+                } else { //No esta registrado                                       
+
+                    //HashPassword
+                    $usuario->hashPassword();
+                    $usuario->Tipo = "Usuario";
+
+                    //Crear el usuario
+                    $resultado = $usuario->guardar();
+
+                    $_SESSION['nombre'] = $usuario->Nombre;
+
+                    if ($resultado) {
+                        header('Location: /');
+                    }
+                }
+            }
+        }
+
+        $alertas = Usuario::getAlertas();
         $router->render('auth/registro', [
-            'valor' => 1,            
+            'valor' => 1,
             'usuario' => $usuario,
             'alertas' => $alertas
 
         ]);
+    }
+
+    public static function salir()
+    {
+        session_start();
+
+        $_SESSION = [];
+
+        header('Location: /');
     }
 }

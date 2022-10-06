@@ -26,7 +26,7 @@ class ActiveRecord
     }
 
     // Validación
-    public static function getErrores()
+    public static function getAlertas()
     {
         return static::$alertas;
     }
@@ -41,7 +41,7 @@ class ActiveRecord
     public function guardar()
     {
         $resultado = '';
-        if (!is_null($this->id)) {
+        if (!is_null($this->ID)) {
             // actualizar
             $resultado = $this->actualizar();
         } else {
@@ -177,14 +177,12 @@ class ActiveRecord
         return $objeto;
     }
 
-
-
     // Identificar y unir los atributos de la BD
     public function atributos()
     {
         $atributos = [];
         foreach (static::$columnasDB as $columna) {
-            if ($columna === 'id') continue;
+            if ($columna === 'ID') continue;
             $atributos[$columna] = $this->$columna;
         }
         return $atributos;
