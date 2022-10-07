@@ -21,4 +21,8 @@ class PaginasController
             ]
         );
     }
+
+    public static function carrito(Router $router){
+        $router->render();
+    }
 }

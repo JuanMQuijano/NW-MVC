@@ -38,7 +38,7 @@
 
             <div class="header__nav-bar mostrar enlaces" id="enlaces">
                 <?php
-                echo isset($inicio) ? '' : '<a href="/a">Inicio</a>';
+                echo isset($inicio) ? '' : '<a href="/">Inicio</a>';
                 ?>
                 <a href="">Hombres</a>
                 <a href="">Mujeres</a>
@@ -90,6 +90,9 @@
         <a href="" class="header__logo">LOGOTIPO</a>
 
         <nav class="header__nav-bar footer__nav-bar">
+            <a href="">Contactanos</a>
+            <a href="">Nosotros</a>
+            <!-- <a href="">Trabaja Con Nosotros</a>     -->
             <div>
                 <a href="">
                     <img src="/media/instagram.png" alt="">
@@ -99,9 +102,6 @@
                     <img src="/media/facebook.png" alt="">
                 </a>
             </div>
-            <a href="">Contactanos</a>
-            <a href="">Nosotros</a>
-            <!-- <a href="">Trabaja Con Nosotros</a>     -->
         </nav>
     </footer>
 
