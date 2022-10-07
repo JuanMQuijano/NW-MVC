@@ -9,8 +9,6 @@ class PaginasController
 {
     public static function index(Router $router)
     {
-        isAuth();
-        
         $prendas = new Prenda();
         $prendas = $prendas->all();
         $router->render(
