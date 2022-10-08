@@ -9,6 +9,8 @@ class LoginController
 {
     public static function login(Router $router)
     {
+        isAuth();
+
         $alertas = [];
         $auth = new Usuario();
 
@@ -59,6 +61,8 @@ class LoginController
 
     public static function registrarse(Router $router)
     {
+        isAuth();
+
         $alertas = [];
         $usuario = new Usuario();
 

@@ -43,7 +43,7 @@
                 <a href="">Hombres</a>
                 <a href="">Mujeres</a>
                 <a href="">Mugs</a>
-                <a href="/paginas/carrito.php"><img src="/media/carrito.png" alt=""></a>
+                <a href="/carrito"><img src="/media/carrito.png" alt=""></a>
             </div>
             <div class="login">
                 <!-- Los valores son así porque si Juanito -->

@@ -11,6 +11,9 @@ $router = new Router();
 //Index y páginas
 $router->get('/', [PaginasController::class, 'index']);
 $router->get('/carrito', [PaginasController::class, 'carrito']);
+$router->post('/carrito', [PaginasController::class, 'carrito']);
+$router->get('/producto', [PaginasController::class, 'producto']);
+$router->post('/producto', [PaginasController::class, 'producto']);
 
 //Iniciar y Cerrar Sesión
 $router->get('/login', [LoginController::class, 'login']);
@@ -20,8 +23,5 @@ $router->get('/salir', [LoginController::class, 'salir']);
 //Registrarse 
 $router->get('/registrarse', [LoginController::class, 'registrarse']);
 $router->post('/registrarse', [LoginController::class, 'registrarse']);
-
-
-
 
 $router->comprobarRutas();

@@ -17,16 +17,16 @@ function s($html): string
 }
 
 //Funcion que revisa que el usuario este autenticado
-function isAuth(): void
-{
-    if (!isset($_SESSION)) {
-        session_start();
-    }
+// function isAuth(): void
+// {
+//     if (!isset($_SESSION)) {
+//         session_start();
+//     }
 
-    if (!isset($_SESSION['login'])) {
-        header('Location: /');
-    }
-}
+//     if (!isset($_SESSION['login'])) {
+//         header('Location: /');
+//     }
+// }
 
 // function validarAdmin()
 // {
@@ -39,15 +39,15 @@ function isAuth(): void
 //     }
 // }
 
-// function validarSesion()
-// {
-//     session_start();
+function isAuth()
+{
+    if (!isset($_SESSION)) {
+        session_start();
+    }
 
-//     $auth = $_SESSION['login'] ?? null;
-//     $name = $_SESSION['name'] ?? null;
+    $auth = $_SESSION['login'] ?? null;
 
-
-//     if (!$auth) {
-//         header('Location: /');
-//     }
-// }
+    if ($auth) {
+        header('Location: /');
+    }
+}

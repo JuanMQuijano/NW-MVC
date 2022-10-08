@@ -2,6 +2,9 @@
 
 namespace Controller;
 
+use Model\Compra;
+use Model\Carrito;
+use Model\Codigo;
 use Model\Prenda;
 use MVC\Router;
 
@@ -23,8 +26,83 @@ class PaginasController
         );
     }
 
+    public static function producto(Router $router)
+    {
+        $id = $_GET['ID'] ?? null;
+        $carrito = new Carrito();
+        $prenda = Prenda::find($id);
+        $alerta = 0;
+
+        if (!$id) {
+            header('Location: /');
+        }
+
+        if (!$prenda) {
+            header('Location: /');
+        }
+
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $carrito = new Carrito($_POST);
+            $resultado = $carrito->addCar();
+
+            if ($resultado) {
+                $alerta = 1;
+            }
+        }
+
+        $nombre = $_SESSION['nombre'] ?? '';
+        $router->render('paginas/producto', [
+            'nombre' => $nombre,
+            'valor' => $nombre ? 3 : 0,
+            'alerta' => $alerta,
+            'prenda' => $prenda
+        ]);
+    }
+
     public static function carrito(Router $router)
     {
-        // $router->render();
+        $valido = true;
+        $logged = true;
+        $aplicado = false;
+        $carrito = new Carrito();
+        $codigo = new Codigo();
+        $compra = new Compra();
+        $IDSESSION = session_id();
+        $prendas = $carrito->sqlCar($IDSESSION);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            $codigo = new Codigo($_POST);
+            $compra = new Compra($_POST);
+            $codigo = $codigo::where('Codigo', $codigo->Codigo);
+            is_null($codigo) ? $valido = false : [$valido = true, $aplicado = true];
+
+            if (!empty($compra->ValorFinal)) {
+                $auth = $_SESSION['login'] ?? null;
+                if (!$auth) {
+                    $logged = false;
+                } else {
+                    foreach ($prendas as $prenda) {
+                        $compra->insert($prenda);
+                    }
+                }
+            }
+        }
+
+        $nombre = $_SESSION['nombre'] ?? '';
+        $router->render(
+            'paginas/carrito',
+            [
+                'nombre' => $nombre,
+                'valor' => $nombre ? 3 : 0,
+                'prendas' => $prendas,
+                'codigo' => $codigo,
+                'compra' => $compra,
+                'valido' => $valido,
+                'logged' => $logged,
+                'aplicado' => $aplicado
+            ]
+        );
     }
 }

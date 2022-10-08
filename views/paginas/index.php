@@ -3,7 +3,7 @@
     <div class="format">
         <?php foreach ($prendas as $prenda) {
         ?>
-            <a class="card-container__card" href="/paginas/producto.php?id=<?php echo $prenda->ID; ?>">
+            <a class="card-container__card" href="/producto?ID=<?php echo $prenda->ID; ?>">
                 <img src="/../../imagenes/<?php echo $prenda->Imagen; ?>" alt="">
             </a>
         <?php } ?>
