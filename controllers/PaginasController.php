@@ -11,18 +11,20 @@ class PaginasController
     {
         $prendas = new Prenda();
         $prendas = $prendas->all();
+        $nombre = $_SESSION['nombre'] ?? '';
         $router->render(
             'paginas/index',
             [
                 'inicio' => true,
-                'nombre' => $_SESSION['nombre'] ?? '',
-                'valor' => $_SESSION['nombre'] ? 3 : 0,
+                'nombre' => $nombre,
+                'valor' => $nombre ? 3 : 0,
                 'prendas' => $prendas
             ]
         );
     }
 
-    public static function carrito(Router $router){
-        $router->render();
+    public static function carrito(Router $router)
+    {
+        // $router->render();
     }
 }
