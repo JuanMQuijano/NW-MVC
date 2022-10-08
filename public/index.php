@@ -14,6 +14,8 @@ $router->get('/carrito', [PaginasController::class, 'carrito']);
 $router->post('/carrito', [PaginasController::class, 'carrito']);
 $router->get('/producto', [PaginasController::class, 'producto']);
 $router->post('/producto', [PaginasController::class, 'producto']);
+$router->get('/eliminar', [PaginasController::class, 'eliminar']);
+
 
 //Iniciar y Cerrar Sesión
 $router->get('/login', [LoginController::class, 'login']);

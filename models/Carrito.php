@@ -33,9 +33,16 @@ class Carrito extends ActiveRecord
         return $resultado;
     }
 
-    public function sqlCar($IDSESSION)
+    public function sqlCar()
     {
-        $query = "SELECT * FROM CARRITO AS C LEFT OUTER JOIN PRENDAS AS P ON C.IDPRENDA = P.ID WHERE C.IDSESSION = '{$IDSESSION}'";
+        $query = "SELECT * FROM CARRITO AS C LEFT OUTER JOIN PRENDAS AS P ON C.IDPRENDA = P.ID WHERE C.IDSESSION = '{$this->IDSESSION}'";
         return self::consultarSQL($query);
+    }
+
+    public function eliminar()
+    {
+        $query = "DELETE FROM " . static::$tabla . " WHERE IDSESSION = '{$this->IDSESSION}' AND IDPRENDA = '{$this->IDPRENDA}' LIMIT 1";
+        $resultado = self::$db->query($query);
+        return $resultado;
     }
 }

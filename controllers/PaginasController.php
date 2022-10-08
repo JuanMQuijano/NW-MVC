@@ -70,8 +70,8 @@ class PaginasController
         $codigo = new Codigo();
         $compra = new Compra();
 
-        $IDSESSION = session_id();
-        $prendas = $carrito->sqlCar($IDSESSION);
+        $carrito->IDSESSION = session_id();
+        $prendas = $carrito->sqlCar();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -106,5 +106,17 @@ class PaginasController
                 'aplicado' => $aplicado
             ]
         );
+    }
+
+    public static function eliminar()
+    {
+        $ID = $_GET['ID'];
+        $carrito = new Carrito();
+        $carrito->IDSESSION = session_id();
+        $carrito->IDPRENDA = $ID;
+
+        if ($carrito->eliminar()) {
+            header('Location: /carrito');
+        }
     }
 }

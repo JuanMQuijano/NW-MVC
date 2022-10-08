@@ -35,7 +35,7 @@
                         <td class="data"><?php echo $prenda->Precio ?></td>
 
                         <td class="data">
-                            <a href="../paginas/eliminarProducto.php?id=<?php echo $prenda->IDPRENDA ?>">
+                            <a href="/eliminar?ID=<?php echo $prenda->IDPRENDA ?>">
                                 <img src="/media/trash.png" alt="Icono de basura">
                             </a>
                         </td>
