@@ -85,7 +85,10 @@ class LoginController
                     //Crear el usuario
                     $resultado = $usuario->guardar();
 
+                    $usuario = $usuario->where('Correo', $usuario->Correo);
+                    $_SESSION['id'] = $usuario->ID;
                     $_SESSION['nombre'] = $usuario->Nombre;
+                    $_SESSION['login'] = true;
 
                     if ($resultado) {
                         header('Location: /');

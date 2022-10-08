@@ -65,9 +65,11 @@ class PaginasController
         $valido = true;
         $logged = true;
         $aplicado = false;
+
         $carrito = new Carrito();
         $codigo = new Codigo();
         $compra = new Compra();
+
         $IDSESSION = session_id();
         $prendas = $carrito->sqlCar($IDSESSION);
 

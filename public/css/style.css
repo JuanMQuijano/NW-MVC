@@ -1,8 +1,7 @@
 :root {
   --colorBG: rgb(20, 21, 29);
-  /*rgb(25 116 124);
-  /* rgb(55, 46, 46); */
-  /* rgb(70, 58, 58); */
+  /* --colorBG: #2C4F40; LIKEIT*/
+  /* --colorBG: #2e266d;  KINDAS*/
   --fuenteNormal: 3rem;
   --fuente1024: 1.8rem;
   --fuenteMobile: 1.6rem;
@@ -533,7 +532,7 @@
     flex-direction: row;
   }
 
-  .enlaces{
+  .enlaces {
     display: block;
   }
 
