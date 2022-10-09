@@ -24,8 +24,9 @@ class Router
 
         // Arreglo de rutas protegidas...
         // $rutas_protegidas = ['/admin', '/propiedades/crear', '/propiedades/actualizar', '/propiedades/eliminar', '/vendedores/crear', '/vendedores/actualizar', '/vendedores/eliminar'];
+        $rutas_protegidas = ['/admin'];
 
-        // $auth = $_SESSION['login'] ?? null;
+        $isAdmin = $_SESSION['admin'] ?? null;
 
         $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
         $method = $_SERVER['REQUEST_METHOD'];
@@ -36,6 +37,10 @@ class Router
             $fn = $this->postRoutes[$currentUrl] ?? null;
         }
 
+        //Proteger las rutas
+        if (in_array($currentUrl, $rutas_protegidas) && !$isAdmin) { //Si la urlActual está en el arreglo y el usuario no esta autenticado
+            header('Location: /');
+        }
 
         if ($fn) {
             // Call user fn va a llamar una función cuando no sabemos cual sera

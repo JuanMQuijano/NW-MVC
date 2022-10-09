@@ -32,7 +32,7 @@
                         </td>
 
                         <td class="data"><?php echo $prenda->Cantidad ?></td>
-                        <td class="data"><?php echo $prenda->Precio ?></td>
+                        <td class="data">$<?php echo $prenda->Precio ?></td>
 
                         <td class="data">
                             <a href="/eliminar?ID=<?php echo $prenda->IDPRENDA ?>">

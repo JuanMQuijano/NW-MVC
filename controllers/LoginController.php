@@ -35,9 +35,8 @@ class LoginController
 
                         //Redireccionamiento
                         if ($usuario->Tipo === "Administrador") {
-                            $_SESSION['admin'] = $usuario->Tipo ?? null;
-                            debuguear("1");
-                            //header('Location: /admin');
+                            $_SESSION['admin'] = true ?? null;
+                            header('Location: /admin');
                         } else {
                             header('Location: /');
                         }

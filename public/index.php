@@ -4,6 +4,7 @@ require_once __DIR__ . '/../includes/app.php';
 
 use Controller\LoginController;
 use Controller\PaginasController;
+use Controller\AdminController;
 use MVC\Router;
 
 $router = new Router();
@@ -25,5 +26,8 @@ $router->get('/salir', [LoginController::class, 'salir']);
 //Registrarse 
 $router->get('/registrarse', [LoginController::class, 'registrarse']);
 $router->post('/registrarse', [LoginController::class, 'registrarse']);
+
+//Admin
+$router->get('/admin', [AdminController::class, 'index']);
 
 $router->comprobarRutas();
