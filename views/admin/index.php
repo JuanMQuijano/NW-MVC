@@ -1,7 +1,7 @@
 <main style="min-height: 63.8rem; max-width: 90%;">
     <h1 class="admin_title">Bienvenido ADMIN</h1>
 
-    <a href="../admin/crearPublicacion.php" class="actions actions__crear">Crear Nueva Publicación</a>
+    <a href="/admin/crearPublicacion" class="actions actions__crear">Crear Nueva Publicación</a>
 
     <table class="admin_table" style="max-width: 90%;">
         <thead>
@@ -26,10 +26,7 @@
                     <td class="data"><?php echo $prenda->Precio; ?></td>
                     <td class="actions">
                         <a href="../admin/actualizarPublicacion.php?id=<?php echo $prenda->ID; ?>" class="actions__actualizar">Actualizar</a>
-                        <form method="POST">
-                            <input type="hidden" name="id" value="<?php echo $prenda->ID ?>">
-                            <input type="submit" class="actions__eliminar" value="Eliminar" style="border:none; cursor:pointer;">
-                        </form>
+                        <a href="/admin/eliminar?ID=<?php echo $prenda->ID; ?>" class="actions__eliminar" style="border:none; cursor:pointer;">Eliminar</a>
                     </td>
                 </tr>
             <?php }

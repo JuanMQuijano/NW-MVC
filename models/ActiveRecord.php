@@ -136,7 +136,7 @@ class ActiveRecord
     public function eliminar()
     {
         // Eliminar el registro
-        $query = "DELETE FROM "  . static::$tabla . " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1";
+        $query = "DELETE FROM "  . static::$tabla . " WHERE id = " . self::$db->escape_string($this->ID) . " LIMIT 1";
         $resultado = self::$db->query($query);
 
         if ($resultado) {
@@ -211,12 +211,12 @@ class ActiveRecord
     public function setImagen($imagen)
     {
         // Elimina la imagen previa
-        if (!is_null($this->id)) {
+        if (!is_null($this->ID)) {
             $this->borrarImagen();
         }
         // Asignar al atributo de imagen el nombre de la imagen
         if ($imagen) {
-            $this->imagen = $imagen;
+            $this->Imagen = $imagen;
         }
     }
 
@@ -224,9 +224,9 @@ class ActiveRecord
     public function borrarImagen()
     {
         //Comprobar si existe el archivo
-        $existeArchivo = file_exists(CARPETA_IMAGENES . $this->imagen);
+        $existeArchivo = file_exists(CARPETA_IMAGENES . $this->Imagen);
         if ($existeArchivo) {
-            unlink(CARPETA_IMAGENES . $this->imagen);
+            unlink(CARPETA_IMAGENES . $this->Imagen);
         }
     }
 }

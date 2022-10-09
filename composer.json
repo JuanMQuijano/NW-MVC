@@ -14,5 +14,7 @@
       "name": "Juan Quijano"
     }
   ],
-  "require": {}
+  "require": {
+    "intervention/image": "^2.7"
+  }
 }
