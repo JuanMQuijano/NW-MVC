@@ -78,8 +78,8 @@ class AdminController extends ActiveRecord
     {
         $ID = $_GET['ID'];
         $prenda = new Prenda();
+        $prenda = $prenda->find($ID);
 
-        $prenda->ID = $ID;
         if ($prenda->eliminar()) {
             header('Location: /admin');
         }
