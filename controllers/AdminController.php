@@ -32,7 +32,7 @@ class AdminController extends ActiveRecord
             $prenda = new Prenda($_POST);
 
             //Generamos un nombre único para la imagen
-            $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
+            $nombreImagen = md5(uniqid(rand(), true)) . ".webp";
 
             //Setear la imagen
             if ($_FILES['Imagen']['tmp_name']) {
@@ -72,6 +72,22 @@ class AdminController extends ActiveRecord
                 'prenda' => $prenda
             ]
         );
+    }
+
+    public static function actualizarPublicacion(Router $router)
+    {
+        $ID = $_GET['ID'];
+        $prenda = new Prenda();
+        $prenda = $prenda->find($ID);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $prenda = new Prenda($_POST);
+            echo $prenda->Imagen;
+            debuguear($_POST);
+        }
+
+
+        $router->render('admin/actualizar', ['prenda' => $prenda]);
     }
 
     public static function eliminarPublicacion()

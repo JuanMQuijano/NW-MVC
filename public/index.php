@@ -29,8 +29,11 @@ $router->post('/registrarse', [LoginController::class, 'registrarse']);
 
 //Admin
 $router->get('/admin', [AdminController::class, 'index']);
-$router->get('/admin/crearPublicacion', [AdminController::class, 'crearPublicacion']);
-$router->post('/admin/crearPublicacion', [AdminController::class, 'crearPublicacion']);
+$router->get('/admin/crear', [AdminController::class, 'crearPublicacion']);
+$router->post('/admin/crear', [AdminController::class, 'crearPublicacion']);
+$router->get('/admin/actualizar', [AdminController::class, 'actualizarPublicacion']);
+$router->post('/admin/actualizar', [AdminController::class, 'actualizarPublicacion']);
+
 $router->get('/admin/eliminar', [AdminController::class, 'eliminarPublicacion']);
 
 $router->comprobarRutas();
