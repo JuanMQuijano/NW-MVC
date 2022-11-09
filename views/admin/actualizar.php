@@ -19,11 +19,8 @@
                 <option value="Mug" <?php echo $prenda->Tipo === 'Mug' ? 'selected' : ''; ?>>Mug</option>
             </select>
 
-            <label for="imagenAnterior">Anterior Imagen</label>
-            <input type="text" hidden name="Imagen" id="imagenAnterior" value="<?php echo $prenda->Imagen; ?>">
-
             <label for="imagen">Nueva Imagen</label>
-            <input type="file" name="ImagenNueva" id="imagen" accept="image/jpeg, image/png">
+            <input type="file" name="Imagen" id="imagen" accept="image/jpeg, image/png">
 
             <label for="precio">Precio</label>
             <input type="number" name="Precio" id="precio" value="<?php echo $prenda->Precio; ?>">

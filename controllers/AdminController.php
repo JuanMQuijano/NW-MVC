@@ -81,9 +81,31 @@ class AdminController extends ActiveRecord
         $prenda = $prenda->find($ID);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $prenda = new Prenda($_POST);
-            echo $prenda->Imagen;
-            debuguear($_POST);
+            //Generamos un nombre único para la imagen
+            $nombreImagen = md5(uniqid(rand(), true)) . ".webp";
+
+            //Setear la imagen
+            if ($_FILES['Imagen']['tmp_name']) {
+                //Realiza un resize a la imagen con intervention
+                $imagen = Image::make($_FILES['Imagen']['tmp_name'])->fit(800, 600);
+                $prenda->setImagen($nombreImagen);
+            }
+
+            /*** SUBIDA DE ARCHIVOS ***/
+
+            //Si una carpeta existe o no
+            if (!is_dir(CARPETA_IMAGENES)) {
+                //Si no existe, crearla
+                mkdir(CARPETA_IMAGENES);
+            }
+
+            //Guarda la imagen en el servidor
+            $imagen->save(CARPETA_IMAGENES . $nombreImagen);
+
+            //Guarda en la bd
+            if ($prenda->guardar()) {
+                header('Location: /admin');
+            }
         }
 
 
